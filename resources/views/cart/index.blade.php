@@ -203,19 +203,22 @@
                     </div>
                 @endif
 
-                <div class="d-flex">
-                    <a href="{{ route('shop.home') }}" class="btn btn-secondary">
-                        <i class="bi bi-arrow-left"></i> {{ trans('shop::messages.cart.back') }}
-                    </a>
-
-                    @if(use_site_money())
-                        <button type="button" class="btn btn-primary ms-auto" data-bs-toggle="modal" data-bs-target="#confirmBuyModal">
-                            {{ trans('shop::messages.buy') }}
+               <div class="row">
+                     <div class="col-md-6">
+                        <a href="{{ route('shop.home') }}" class="btn btn-secondary">
+                            <i class="bi bi-arrow-left"></i> {{ trans('shop::messages.cart.back') }}
+                        </a>
+                     </div>
+                     <div class="col-md-6 text-end">
+                        @if(use_site_money())
+                            <button type="button" class="btn btn-primary ms-auto" data-bs-toggle="modal" data-bs-target="#confirmBuyModal">
+                                {{ trans('shop::messages.buy_points') }}
+                            </button>
+                        @endif
+                        <button type="submit" class="btn btn-primary ms-auto">
+                            <i class="bi bi-cart-check"></i> {{ trans('shop::messages.cart.checkout') }}
                         </button>
-                    @endif
-                    <button type="submit" class="btn btn-primary ms-auto">
-                        <i class="bi bi-cart-check"></i> {{ trans('shop::messages.cart.checkout') }}
-                    </button>
+                     </div>
                 </div>
             </form>
         </div>
