@@ -212,11 +212,10 @@
                         <button type="button" class="btn btn-primary ms-auto" data-bs-toggle="modal" data-bs-target="#confirmBuyModal">
                             {{ trans('shop::messages.buy') }}
                         </button>
-                    @else
-                        <button type="submit" class="btn btn-primary ms-auto">
-                            <i class="bi bi-cart-check"></i> {{ trans('shop::messages.cart.checkout') }}
-                        </button>
                     @endif
+                    <button type="submit" class="btn btn-primary ms-auto">
+                        <i class="bi bi-cart-check"></i> {{ trans('shop::messages.cart.checkout') }}
+                    </button>
                 </div>
             </form>
         </div>
