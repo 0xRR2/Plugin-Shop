@@ -72,6 +72,7 @@ class StripeMethod extends PaymentMethod
             'success_url' => str_replace('%id%', '{CHECKOUT_SESSION_ID}', $successUrl),
             'cancel_url' => route('shop.cart.index'),
             'client_reference_id' => $payment->id,
+            'invoice_creation' => true,
         ]);
 
         $payment->update(['transaction_id' => $session->payment_intent]);
